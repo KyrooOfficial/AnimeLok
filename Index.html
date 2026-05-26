@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>AnimeLok - Nonton Anime Sub Indo</title>
+    <meta name="description" content="Nonton anime subtitle Indonesia terbaru, streaming anime online dengan kualitas terbaik di AnimeLok">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" id="logo-link">
+                <i class="fas fa-play-circle"></i>
+                Anime<span>Lok</span>
+            </a>
+            
+            <div class="nav-search">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Cari anime..." autocomplete="off">
+            </div>
+            
+            <div class="nav-right">
+                <button class="nav-icon" id="user-level-btn">
+                    <i class="fas fa-user-astronaut"></i>
+                    <span id="user-level">Illusiona...</span>
+                    <small>Lvl. 16 #103307</small>
+                </button>
+                <button class="nav-icon premium-btn" id="premium-btn">
+                    <i class="fas fa-crown"></i>
+                    <span>Premium</span>
+                </button>
+                <button class="nav-icon" id="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge" id="notif-badge">3</span>
+                </button>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <button class="bottom-nav-item active" data-page="home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </button>
+        <button class="bottom-nav-item" data-page="ongoing">
+            <i class="fas fa-sync-alt"></i>
+            <span>Ongoing</span>
+        </button>
+        <button class="bottom-nav-item" data-page="complete">
+            <i class="fas fa-check-circle"></i>
+            <span>Complete</span>
+        </button>
+        <button class="bottom-nav-item" data-page="schedule">
+            <i class="fas fa-calendar"></i>
+            <span>Jadwal</span>
+        </button>
+        <button class="bottom-nav-item" data-page="downloads">
+            <i class="fas fa-download"></i>
+            <span>Download</span>
+        </button>
+    </div>
+
+    <!-- Premium Modal -->
+    <div class="modal" id="premium-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="premium-plan">
+                <i class="fas fa-crown"></i>
+                <h2>AnimeLok Premium</h2>
+                <p>Bantu server? Beli VIP aja #anibifree untuk semua 😍</p>
+                <div class="pricing">
+                    <div class="price-card">
+                        <h4>Bulanan</h4>
+                        <div class="price">Rp29.000</div>
+                        <button class="buy-premium-btn">BELI PREMIUM DISINI</button>
+                    </div>
+                    <div class="price-card popular">
+                        <div class="popular-badge">POPULER</div>
+                        <h4>Tahunan</h4>
+                        <div class="price">Rp249.000</div>
+                        <button class="buy-premium-btn">BELI PREMIUM DISINI</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Panel -->
+    <div class="notification-panel" id="notification-panel">
+        <div class="notification-header">
+            <h3>Notifikasi</h3>
+            <button id="mark-all-read">Tandai semua dibaca</button>
+        </div>
+        <div class="notification-list" id="notification-list"></div>
+    </div>
+
+    <!-- User Panel -->
+    <div class="user-panel" id="user-panel">
+        <div class="user-header">
+            <i class="fas fa-user-astronaut"></i>
+            <div>
+                <h4 id="user-name">Illusiona...</h4>
+                <p>Lvl. 16 #103307</p>
+            </div>
+        </div>
+        <div class="login-options">
+            <h5>Login dengan</h5>
+            <div class="login-buttons">
+                <button class="login-btn google"><i class="fab fa-google"></i> Google</button>
+                <button class="login-btn facebook"><i class="fab fa-facebook"></i> Facebook</button>
+                <button class="login-btn discord"><i class="fab fa-discord"></i> Discord</button>
+                <button class="login-btn github"><i class="fab fa-github"></i> GitHub</button>
+            </div>
+        </div>
+        <div class="user-menu-items">
+            <a href="#"><i class="fas fa-history"></i> Riwayat Nonton</a>
+            <a href="#"><i class="fas fa-list"></i> Daftar Tontonan</a>
+            <a href="#"><i class="fas fa-download"></i> Download Saya</a>
+            <a href="#"><i class="fas fa-cog"></i> Pengaturan</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <div class="loading-container" id="loading">
+            <div class="loading-spinner"></div>
+            <p>Memuat anime...</p>
+        </div>
+        <div id="content-area"></div>
+    </main>
+
+    <!-- Mini Player -->
+    <div class="mini-player" id="mini-player" style="display: none;">
+        <video id="mini-video" src=""></video>
+        <div class="mini-player-controls">
+            <button id="mini-play-pause"><i class="fas fa-play"></i></button>
+            <span id="mini-title">Memutar...</span>
+            <button id="mini-close"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
