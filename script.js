@@ -1,5 +1,5 @@
 // ==================== KONFIGURASI API ====================
-const API_BASE = 'api/stream/anime';
+const API_BASE = 'https://cors-anywhere.herokuapp.com/https://bintangapi.full.diskon.cloud/api/stream/anime';
 
 // State
 let currentPage = 'home';
